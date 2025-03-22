@@ -8,35 +8,47 @@ function comprar() {
 
     switch (tipoIngresso) {
         case 'pista':
-            let quantidadePista = document.getElementById('qtd-pista');
-            if (quantidade > valorPista) {
-                alert('Quantidade indisponível para pista!');
-                document.getElementById('qtd').value = '';
-                return;
-            }
-            valorPista = valorPista - quantidade;
-            quantidadePista.textContent = valorPista;
+            comprarPista(quantidade);
             break;
         case 'superior':
-            let quantidadeSuperior = document.getElementById('qtd-superior');
-            if (quantidade > valorSuperior) {
-                alert('Quantidade indisponível para pista!');
-                document.getElementById('qtd').value = '';
-                return;
-            }
-            valorSuperior = valorSuperior - quantidade;
-            quantidadeSuperior.textContent = valorSuperior
+            comprarSuperior(quantidade);
             break;
         case 'inferior':
-            let quantidadeInferior = document.getElementById('qtd-inferior');
-            if (quantidade > valorInferior) {
-                alert('Quantidade indisponível para pista!');
-                document.getElementById('qtd').value = '';
-                return;
-            }
-            valorInferior = valorInferior - quantidade;
-            quantidadeInferior.textContent = valorInferior;
+            comprarInferior(quantidade);
             break;
     }
     document.getElementById('qtd').value = '';
+}
+
+function comprarPista(quantidade) {
+    let quantidadePista = document.getElementById('qtd-pista');
+    if (quantidade > valorPista) {
+        alert('Quantidade indisponível para pista!');
+        document.getElementById('qtd').value = '';
+        return;
+    }
+    valorPista = valorPista - quantidade;
+    quantidadePista.textContent = valorPista;
+}
+
+function comprarSuperior(quantidade) {
+    let quantidadeSuperior = document.getElementById('qtd-superior');
+    if (quantidade > valorSuperior) {
+        alert('Quantidade indisponível para pista!');
+        document.getElementById('qtd').value = '';
+        return;
+    }
+    valorSuperior = valorSuperior - quantidade;
+    quantidadeSuperior.textContent = valorSuperior;
+}
+
+function comprarInferior(quantidade) {
+    let quantidadeInferior = document.getElementById('qtd-inferior');
+    if (quantidade > valorInferior) {
+        alert('Quantidade indisponível para pista!');
+        document.getElementById('qtd').value = '';
+        return;
+    }
+    valorInferior = valorInferior - quantidade;
+    quantidadeInferior.textContent = valorInferior;
 }
