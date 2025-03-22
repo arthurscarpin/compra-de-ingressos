@@ -6,6 +6,12 @@ function comprar() {
     let tipoIngresso = document.getElementById('tipo-ingresso').value;
     let quantidade = document.getElementById('qtd').value;
 
+    if (quantidade <= 0) {
+        alert('A quantidade é inválida!');
+        document.getElementById('qtd').value = '';
+        return;
+    }
+
     switch (tipoIngresso) {
         case 'pista':
             comprarPista(quantidade);
