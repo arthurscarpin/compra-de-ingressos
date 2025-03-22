@@ -1,6 +1,6 @@
-let valorPista = 100;
-let valorSuperior = 200;
-let valorInferior = 400;
+let valorPista = parseInt(document.getElementById('qtd-pista').textContent);
+let valorSuperior = parseInt(document.getElementById('qtd-superior').textContent);
+let valorInferior = parseInt(document.getElementById('qtd-inferior').textContent);
 
 function comprar() {
     let tipoIngresso = document.getElementById('tipo-ingresso').value;
